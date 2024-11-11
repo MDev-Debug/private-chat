@@ -1,4 +1,4 @@
-const socket = io("http://localhost:5000");
+const socket = io();
 
 const urlSearch = new URLSearchParams(window.location.search);
 const fromUserSocketID = urlSearch.get("from_user");
