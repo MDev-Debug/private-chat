@@ -36,8 +36,10 @@ function handleUserConnected(socket: Socket, data: User) {
     io.emit('users-online', users)
 }
 
-function handleSendMessage(data: Message) {    
+function handleSendMessage(data: any) {
     const msg: Message = {
+        usernameReceived: users.find(u => u.socket_id === data.to_user)?.username || '',
+        usernameSended: users.find(u => u.socket_id === data.from_user)?.username || '',
         to_user: data.to_user,
         from_user: data.from_user,
         text: data.text,

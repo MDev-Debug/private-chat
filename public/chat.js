@@ -29,6 +29,6 @@ socket.on('receive_message', (msg) => {
     console.log(msg);
     let messagesDiv = document.getElementById("messages");
     messagesDiv.innerHTML += `
-        ${msg.text}
+        <strong>${msg.usernameSended}:</strong> ${msg.text} <br>
     `
 });
